@@ -4,7 +4,7 @@ FROM lsiobase/alpine.nginx:3.7
 ARG BUILD_DATE
 ARG VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
-LABEL maintainer="aptalca"
+LABEL maintainer="ullbergm"
 
 # environment settings
 ENV S6_BEHAVIOUR_IF_STAGE2_FAILS=2
@@ -18,12 +18,11 @@ RUN \
 	php7-tokenizer \
 	tar && \
  echo "**** install heimdall ****" && \
- HEIM_VER="$(curl -sX GET https://api.github.com/repos/linuxserver/Heimdall/releases/latest | grep 'tag_name' | cut -d\" -f4)" && \
  mkdir -p \
 	/var/www/localhost/heimdall && \
  curl -o \
  /tmp/heimdall.tar.gz -L \
-	"https://github.com/linuxserver/Heimdall/archive/${HEIM_VER}.tar.gz" && \
+	"https://github.com/ullbergm/Heimdall/archive/v1.0.0.tar.gz" && \
  tar xf \
  /tmp/heimdall.tar.gz -C \
 	/var/www/localhost/heimdall --strip-components=1 && \
