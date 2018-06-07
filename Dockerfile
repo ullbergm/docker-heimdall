@@ -22,7 +22,7 @@ RUN \
 	/var/www/localhost/heimdall && \
  curl -o \
  /tmp/heimdall.tar.gz -L \
-	"https://github.com/ullbergm/Heimdall/archive/v1.0.3.tar.gz" && \
+	"https://github.com/ullbergm/Heimdall/archive/v1.0.4.tar.gz" && \
  tar xf \
  /tmp/heimdall.tar.gz -C \
 	/var/www/localhost/heimdall --strip-components=1 && \
